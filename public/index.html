@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuickFind.LK - Find Trusted Service Providers Near You</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <link rel="icon" type="png" href="../icon/quickfind logo .png">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'primary': '#37AFE1',
+            'primary-light': '#375ae1',
+            'background': '#f0f4f8',
+            'text-secondary': '#64748b',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    .animate-fadeIn {
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .animate-slideIn {
+      animation: slideIn 0.5s ease-out;
+    }
+  </style>
+</head>
+
+<body class="bg-background font-sans">
+  <header class="bg-primary text-white p-4 animate-fadeIn">
+    <div class="container mx-auto flex justify-between items-center">
+      <img src="../icon/quickfind logo .png" style="height:50px;" alt="logo">
+      <nav>
+        <a href="#" class="hover:text-primary-light transition duration-300 mr-4">How It Works</a>
+        <a href="#" class="hover:text-primary-light transition duration-300 mr-4">For Providers</a>
+        <a href="/signin" class="hover:text-primary-light transition duration-300">Login / Sign Up</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container mx-auto mt-8 px-4">
+    <section class="bg-white rounded-lg p-8 mb-12 text-center shadow-lg animate-slideIn">
+      <h2 class="text-4xl font-bold text-primary mb-6">Find Trusted Service Providers Near You</h2>
+      <p class="text-xl text-text-secondary mb-8">From home repairs to personal services, discover top-rated
+        professionals in your area.</p>
+      <div class="relative max-w-2xl mx-auto">
+        <input type="text" id="search-input" placeholder="What service do you need?"
+          class="w-full p-4 pr-12 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-primary bg-background text-text-secondary transition duration-300">
+        <button
+          class="absolute right-4 top-1/2 transform -translate-y-1/2 text-primary hover:text-primary-light transition duration-300">
+          <span class="material-icons">search</span>
+        </button>
+      </div>
+      <div id="search-results" class="absolute z-10 bg-white w-full max-w-2xl mt-2 rounded-lg shadow-lg hidden"></div>
+    </section>
+
+    <section class="mb-12 animate-slideIn" style="animation-delay: 0.2s;">
+      <div class="flex justify-between items-center mb-6">
+        <h3 class="text-2xl font-bold text-primary">Popular Categories</h3>
+        <a href="#" id="view-all-categories" class="text-primary hover:text-primary-light transition duration-300">View
+          All Categories</a>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="text-center group">
+          <div
+           class="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-2 mx-auto shadow-md group-hover:shadow-lg transition duration-300">
+            <img src="/icon/training.png" alt="Teaching" class="w-16 object-contain"/>
+          </div>
+          
+          <p class="text-text-secondary group-hover:text-primary transition duration-300">Teaching</p>
+                    
+        </div>
+        <div class="text-center group">
+          <div
+            class="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-2 mx-auto shadow-md group-hover:shadow-lg transition duration-300">
+            <img src="/icon/plumber.png" alt="Plumber" class="w-16 object-contain">
+          </div>
+          <p class="text-text-secondary group-hover:text-primary transition duration-300">Plumber</p>
+        </div>
+        <div class="text-center group">
+          <div
+            class="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-2 mx-auto shadow-md group-hover:shadow-lg transition duration-300">
+            <img src="/icon/Landscaper (2).png" alt="Landscaper" class="w-16 object-contain" >
+          </div>
+          <p class="text-text-secondary group-hover:text-primary transition duration-300">Landscaper</p>
+        </div>
+        <div class="text-center group">
+          <div
+            class="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-2 mx-auto shadow-md group-hover:shadow-lg transition duration-300">
+            <img src="/icon/carpenter.png" alt="Carpenter" class="w-16 object-contain">
+          </div>
+          <p class="text-text-secondary group-hover:text-primary transition duration-300">Carpenter</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="animate-slideIn mb-12" style="animation-delay: 0.4s;">
+      <h3 class="text-2xl font-bold mb-6 text-primary">Featured Providers</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 ad-card" data-ad-id="1">
+          <h4 class="font-bold text-primary mb-2">John's Electrical</h4>
+          <div class="text-yellow-400 mb-2">★★★★ <span class="text-text-secondary">(50 reviews)</span></div>
+          <p class="text-text-secondary mb-2"><span
+              class="material-icons text-sm align-middle mr-1">location_on</span>Colombo</p>
+          <p class="text-sm text-text-secondary mb-4">Specializing in residential and commercial electrical services.
+          </p>
+          <a href="#" class="text-primary hover:text-primary-light transition duration-300">View Profile</a>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 ad-card" data-ad-id="2">
+          <h4 class="font-bold text-primary mb-2">Green Thumb Landscaping</h4>
+          <div class="text-yellow-400 mb-2">★★★★☆ <span class="text-text-secondary">(35 reviews)</span></div>
+          <p class="text-text-secondary mb-2"><span
+              class="material-icons text-sm align-middle mr-1">location_on</span>Kandy</p>
+          <p class="text-sm text-text-secondary mb-4">Transform your outdoor space with our expert landscaping services.
+          </p>
+          <a href="#" class="text-primary hover:text-primary-light transition duration-300">View Profile</a>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 ad-card" data-ad-id="3">
+          <h4 class="font-bold text-primary mb-2">Plumb Perfect</h4>
+          <div class="text-yellow-400 mb-2">★★★★ <span class="text-text-secondary">(42 reviews)</span></div>
+          <p class="text-text-secondary mb-2"><span
+              class="material-icons text-sm align-middle mr-1">location_on</span>Galle</p>
+          <p class="text-sm text-text-secondary mb-4">24/7 emergency plumbing services for residential and commercial
+            needs.</p>
+          <a href="#" class="text-primary hover:text-primary-light transition duration-300">View Profile</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white rounded-lg p-8 mb-12 text-center shadow-lg animate-slideIn" style="animation-delay: 0.6s;">
+      <h3 class="text-2xl font-bold text-primary mb-4">Why Choose QuickFind.LK?</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+        <div>
+          <span class="material-icons text-5xl text-primary-light mb-4">verified</span>
+          <h4 class="font-bold text-lg mb-2">Verified Providers</h4>
+          <p class="text-text-secondary">All our service providers undergo a thorough verification process.</p>
+        </div>
+        <div>
+          <span class="material-icons text-5xl text-primary-light mb-4">star_rate</span>
+          <h4 class="font-bold text-lg mb-2">Top Rated Professionals</h4>
+          <p class="text-text-secondary">Choose from top-rated professionals with real customer reviews.</p>
+        </div>
+        <div>
+          <span class="material-icons text-5xl text-primary-light mb-4">support_agent</span>
+          <h4 class="font-bold text-lg mb-2">24/7 Customer Support</h4>
+          <p class="text-text-secondary">We are here to assist you anytime, ensuring a seamless experience.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-primary text-white py-4 text-center animate-fadeIn">
+    <p>&copy; 2024 QuickFind.LK. All rights reserved.</p>
+  </footer>
+</body>
+
+</html>

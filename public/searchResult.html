@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickFind.LK - Search Results</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#37AFE1',
+                        'primary-light': '#4CC9FE',
+                        'background': '#f0f4f8',
+                        'text-secondary': '#64748b',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-background font-sans">
+    <header class="bg-primary text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <img src="../icon/quickfind logo .png" style="height:50px;" alt="logo">
+            <nav>
+                <a href="#" class="hover:text-primary-light transition duration-300 mr-4">How It Works</a>
+                <a href="#" class="hover:text-primary-light transition duration-300 mr-4">For Providers</a>
+                <a href="#" class="hover:text-primary-light transition duration-300">Login / Sign Up</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto mt-8 px-4">
+        <div class="mb-8">
+            <h2 class="text-3xl font-bold text-primary mb-4">Search Results</h2>
+            <div class="flex items-center">
+                <input type="text" placeholder="Search for services"
+                    class="w-full p-3 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-primary">
+                <button
+                    class="bg-primary text-white px-6 py-3 rounded-r-md hover:bg-primary-light transition duration-300">Search</button>
+            </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row">
+            <!-- Filters -->
+            <div class="w-full md:w-1/4 mb-8 md:mb-0 md:mr-8">
+                <h3 class="text-xl font-bold mb-4">Filters</h3>
+                <div class="bg-white p-4 rounded-lg shadow">
+                    <div class="mb-4">
+                        <h4 class="font-bold mb-2">Price Range</h4>
+                        <input type="range" min="0" max="10000" step="500" class="w-full" id="priceRange">
+                        <div class="flex justify-between text-sm text-text-secondary">
+                            <span>0 LKR</span>
+                            <span id="priceValue">5000 LKR</span>
+                            <span>10000+ LKR</span>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <h4 class="font-bold mb-2">Rating</h4>
+                        <div class="space-y-2">
+                            <label class="flex items-center">
+                                <input type="checkbox" class="form-checkbox text-primary">
+                                <span class="ml-2">★★★★★</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="form-checkbox text-primary">
+                                <span class="ml-2">★★★★☆ & up</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="form-checkbox text-primary">
+                                <span class="ml-2">★★★☆☆ & up</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-2">Availability</h4>
+                        <div class="space-y-2">
+                            <label class="flex items-center">
+                                <input type="checkbox" class="form-checkbox text-primary">
+                                <span class="ml-2">Available Now</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="form-checkbox text-primary">
+                                <span class="ml-2">Available Today</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="form-checkbox text-primary">
+                                <span class="ml-2">Available This Week</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results -->
+            <div class="w-full md:w-3/4">
+                <div class="flex justify-between items-center mb-4">
+                    <p class="text-text-secondary">Showing 1-10 of 50 results</p>
+                    <select
+                        class="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-primary">
+                        <option>Sort by: Relevance</option>
+                        <option>Sort by: Highest Rated</option>
+                        <option>Sort by: Most Popular</option>
+                    </select>
+                </div>
+                <div class="space-y-6" id="searchResults">
+                    <!-- Search results will be dynamically inserted here -->
+                </div>
+                <div class="mt-8 flex justify-center">
+                    <button
+                        class="bg-primary text-white px-6 py-3 rounded-md hover:bg-primary-light transition duration-300">Load
+                        More Results</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-primary text-white py-12 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-xl font-bold mb-4">QuickFind.LK</h4>
+                    <p class="text-sm">Connecting you with trusted service providers across Sri Lanka.</p>
+                </div>
+                <div>
+                    <h5 class="font-bold mb-4">Quick Links</h5>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-primary-light transition duration-300">Home</a></li>
+                        <li><a href="#" class="hover:text-primary-light transition duration-300">About Us</a></li>
+                        <li><a href="#" class="hover:text-primary-light transition duration-300">Services</a></li>
+                        <li><a href="#" class="hover:text-primary-light transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-bold mb-4">For Providers</h5>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-primary-light transition duration-300">Join as a Provider</a>
+                        </li>
+                        <li><a href="#" class="hover:text-primary-light transition duration-300">Provider Dashboard</a>
+                        </li>
+                        <li><a href="#" class="hover:text-primary-light transition duration-300">Provider Guidelines</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-bold mb-4">Connect With Us</h5>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-primary-light transition duration-300"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="hover:text-primary-light transition duration-300"><i
+                                class="fab fa-twitter"></i></a>
+                        <a href="#" class="hover:text-primary-light transition duration-300"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#" class="hover:text-primary-light transition duration-300"><i
+                                class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-blue-700 text-center">
+                <p>&copy; 2024 QuickFind.LK. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Sample data for search results
+        const sampleResults = [
+            { name: "John's Electrical", rating: 4.5, reviews: 50, location: "Colombo", description: "Specializing in residential and commercial electrical services." },
+            { name: "Green Thumb Landscaping", rating: 4.2, reviews: 35, location: "Kandy", description: "Transform your outdoor space with our expert landscaping services." },
+            { name: "Plumb Perfect", rating: 4.8, reviews: 42, location: "Galle", description: "24/7 emergency plumbing services for residential and commercial needs." },
+            // Add more sample results as needed
+        ];
+
+        function createResultCard(result) {
+            return `
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <h4 class="font-bold text-primary mb-2">${result.name}</h4>
+                    <div class="text-yellow-400 mb-2">
+                        ${'★'.repeat(Math.floor(result.rating))}${'☆'.repeat(5 - Math.floor(result.rating))}
+                        <span class="text-text-secondary">(${result.reviews} reviews)</span>
+                    </div>
+                    <p class="text-text-secondary mb-2"><i class="fas fa-map-marker-alt mr-2"></i>${result.location}</p>
+                    <p class="text-sm text-text-secondary mb-4">${result.description}</p>
+                    <a href="#" class="text-primary hover:text-primary-light transition duration-300">View Profile</a>
+                </div>
+            `;
+        }
+
+        function displayResults() {
+            const resultsContainer = document.getElementById('searchResults');
+            resultsContainer.innerHTML = sampleResults.map(createResultCard).join('');
+        }
+
+        // Display initial results
+        displayResults();
+
+        // Price range slider
+        const priceRange = document.getElementById('priceRange');
+        const priceValue = document.getElementById('priceValue');
+        priceRange.addEventListener('input', function () {
+            priceValue.textContent = this.value + ' LKR';
+        });
+    </script>
+</body>
+
+</html>

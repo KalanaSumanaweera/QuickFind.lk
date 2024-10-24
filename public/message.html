@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickFind.LK - Messaging</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#37AFE1',
+                        'primary-light': '#4CC9FE',
+                        'background': '#f0f4f8',
+                        'text-secondary': '#64748b',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-background font-sans">
+    <header class="bg-primary text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <img src="../icon/quickfind logo .png" style="height:50px;" alt="logo">
+            <nav>
+                <a href="#" class="hover:text-primary-light transition duration-300 mr-4">Dashboard</a>
+                <a href="#" class="hover:text-primary-light transition duration-300 mr-4">Messages</a>
+                <a href="#" class="hover:text-primary-light transition duration-300">Logout</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto mt-8 px-4">
+        <h2 class="text-3xl font-bold text-primary mb-6">Messages</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white rounded-lg shadow-md">
+                <div class="p-4 border-b">
+                    <input type="text" id="searchConversations" placeholder="Search conversations"
+                        class="w-full p-2 border border-gray-300 rounded-md">
+                </div>
+                <div id="conversationList" class="overflow-y-auto h-96">
+                    <!-- Conversation previews will be dynamically inserted here -->
+                </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-md col-span-2">
+                <div class="p-4 border-b">
+                    <h3 id="currentConversationName" class="font-bold">Select a conversation</h3>
+                </div>
+                <div id="messageList" class="h-96 overflow-y-auto p-4 space-y-4">
+                    <!-- Messages will be dynamically inserted here -->
+                </div>
+                <div class="p-4 border-t">
+                    <div class="flex">
+                        <input type="text" id="messageInput" placeholder="Type a message"
+                            class="flex-grow p-2 border border-gray-300 rounded-l-md">
+                        <button id="sendMessage"
+                            class="bg-primary text-white px-4 py-2 rounded-r-md hover:bg-primary-light transition duration-300">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-primary text-white py-12 mt-12">
+        <div class="container mx-auto px-4">
+            <footer class="bg-primary text-white py-12 animate-fadeIn">
+                <div class="container mx-auto px-4">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                        <div>
+                            <h4 class="text-xl font-bold mb-4">QuickFind.LK</h4>
+                            <p class="text-sm">Connecting you with trusted service providers across Sri Lanka.</p>
+                        </div>
+                        <div>
+                            <h5 class="font-bold mb-4">Quick Links</h5>
+                            <ul class="space-y-2">
+                                <li><a href="#" class="hover:text-primary-light transition duration-300">Home</a></li>
+                                <li><a href="#" class="hover:text-primary-light transition duration-300">About Us</a>
+                                </li>
+                                <li><a href="#" class="hover:text-primary-light transition duration-300">Services</a>
+                                </li>
+                                <li><a href="#" class="hover:text-primary-light transition duration-300">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 class="font-bold mb-4">For Providers</h5>
+                            <ul class="space-y-2">
+                                <li><a href="#" class="hover:text-primary-light transition duration-300">Join as a
+                                        Provider</a></li>
+                                <li><a href="#" class="hover:text-primary-light transition duration-300">Provider
+                                        Dashboard</a></li>
+                                <li><a href="#" class="hover:text-primary-light transition duration-300">Provider
+                                        Guidelines</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 class="font-bold mb-4">Connect With Us</h5>
+                            <div class="flex space-x-4">
+                                <a href="#" class="hover:text-primary-light transition duration-300"><i
+                                        class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="hover:text-primary-light transition duration-300"><i
+                                        class="fab fa-twitter"></i></a>
+                                <a href="#" class="hover:text-primary-light transition duration-300"><i
+                                        class="fab fa-instagram"></i></a>
+                                <a href="#" class="hover:text-primary-light transition duration-300"><i
+                                        class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 pt-8 border-t border-blue-700 text-center">
+                        <p>&copy; 2024 QuickFind.LK. All rights reserved.</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </footer>
+
+    <script src="messaging.js"></script>
+</body>
+
+</html>

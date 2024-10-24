@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickFind.LK - Advertise Your Service</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#37AFE1',
+                        'primary-light': '#4CC9FE',
+                        'background': '#f0f4f8',
+                        'text-secondary': '#64748b',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .animate-fadeIn {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+    </style>
+</head>
+
+<body class="bg-background font-sans">
+    <header class="bg-primary text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <img src="../icon/quickfind logo .png" style="height:50px;" alt="logo">
+            <nav>
+                <a href="#" class="hover:text-primary-light transition duration-300 mr-4">How It Works</a>
+                <a href="#" class="hover:text-primary-light transition duration-300 mr-4">For Providers</a>
+                <a href="#" class="hover:text-primary-light transition duration-300">Login / Sign Up</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto mt-8 px-4">
+        <h2 class="text-3xl font-bold text-primary mb-6">Advertise Your Service</h2>
+        <form id="serviceForm" class="bg-white rounded-lg p-8 shadow-lg max-w-2xl mx-auto">
+            <div class="mb-6">
+                <label for="serviceTitle" class="block text-sm font-medium text-gray-700 mb-2">Service Title</label>
+                <input type="text" id="serviceTitle" name="serviceTitle"
+                    class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                    required>
+            </div>
+
+            <div class="mb-6">
+                <label for="serviceCategory" class="block text-sm font-medium text-gray-700 mb-2">Service
+                    Category</label>
+                <select id="serviceCategory" name="serviceCategory"
+                    class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                    required>
+                    <option value="">Select a category</option>
+                    <option value="electrician">Electrician</option>
+                    <option value="plumber">Plumber</option>
+                    <option value="carpenter">Carpenter</option>
+                    <option value="landscaper">Landscaper</option>
+                </select>
+            </div>
+
+            <div class="mb-6">
+                <label for="serviceDescription" class="block text-sm font-medium text-gray-700 mb-2">Service
+                    Description</label>
+                <textarea id="serviceDescription" name="serviceDescription" rows="4"
+                    class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                    required></textarea>
+            </div>
+
+            <div class="mb-6">
+                <label for="servicePrice" class="block text-sm font-medium text-gray-700 mb-2">Price (LKR)</label>
+                <input type="number" id="servicePrice" name="servicePrice" min="0" step="100"
+                    class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                    required>
+            </div>
+
+            <div class="mb-6">
+                <label for="serviceLocation" class="block text-sm font-medium text-gray-700 mb-2">Service
+                    Location</label>
+                <input type="text" id="serviceLocation" name="serviceLocation"
+                    class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                    required>
+            </div>
+
+            <div class="mb-6">
+                <label class="block text-sm font-medium text-gray-700 mb-2">Availability</label>
+                <div class="flex flex-wrap gap-4">
+                    <label class="inline-flex items-center">
+                        <input type="checkbox" name="availability" value="weekdays" class="form-checkbox text-primary">
+                        <span class="ml-2">Weekdays</span>
+                    </label>
+                    <label class="inline-flex items-center">
+                        <input type="checkbox" name="availability" value="weekends" class="form-checkbox text-primary">
+                        <span class="ml-2">Weekends</span>
+                    </label>
+                    <label class="inline-flex items-center">
+                        <input type="checkbox" name="availability" value="evenings" class="form-checkbox text-primary">
+                        <span class="ml-2">Evenings</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <label for="serviceImages" class="block text-sm font-medium text-gray-700 mb-2">Upload Images</label>
+                <input type="file" id="serviceImages" name="serviceImages" accept="image/*" multiple
+                    class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+            </div>
+
+            <div class="mb-6">
+                <label for="listingFee" class="block text-sm font-medium text-gray-700 mb-2">Listing Fee</label>
+                <select id="listingFee" name="listingFee"
+                    class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                    required>
+                    <option value="500">500 LKR</option>
+                    <option value="1000">1000 LKR</option>
+                    <option value="1500">1500 LKR</option>
+                    <option value="2000">2000 LKR</option>
+                </select>
+            </div>
+
+            <div class="text-center">
+                <button type="submit"
+                    class="bg-primary text-white px-6 py-3 rounded-md hover:bg-primary-light transition duration-300">Post
+                    Advertisement</button>
+            </div>
+        </form>
+    </main>
+
+    <footer class="bg-primary text-white py-12 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-xl font-bold mb-4">QuickFind.LK</h4>
+                    <p class="text-sm">Connecting you with trusted service providers across Sri Lanka.</p>
+                </div>
+                <div>
+                    <h5 class="font-bold mb-4">Quick Links</h5>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-primary-light transition duration-300">Home</a></li>
+                        <li><a href="#" class="hover:text-primary-light transition duration-300">About Us</a></li>
+                        <li><a href="#" class="hover:text-primary-light transition duration-300">Services</a></li>
+                        <li><a href="#" class="hover:text-primary-light transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-bold mb-4">For Providers</h5>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-primary-light transition duration-300">Join as a Provider</a>
+                        </li>
+                        <li><a href="#" class="hover:text-primary-light transition duration-300">Provider Dashboard</a>
+                        </li>
+                        <li><a href="#" class="hover:text-primary-light transition duration-300">Provider Guidelines</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-bold mb-4">Connect With Us</h5>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-primary-light transition duration-300"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="hover:text-primary-light transition duration-300"><i
+                                class="fab fa-twitter"></i></a>
+                        <a href="#" class="hover:text-primary-light transition duration-300"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#" class="hover:text-primary-light transition duration-300"><i
+                                class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-blue-700 text-center">
+                <p>&copy; 2024 QuickFind.LK. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="loadingOverlay" class="fixed inset-0 bg-gray-600 bg-opacity-50 hidden items-center justify-center">
+        <div class="bg-white p-6 rounded-lg shadow-xl">
+            <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+            <p class="mt-4 text-primary">Submitting your advertisement...</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('serviceForm');
+            const formFields = form.elements;
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                if (validateForm()) {
+                    showLoading();
+                    // Simulate API call
+                    setTimeout(() => {
+                        hideLoading();
+                        console.log('Form submitted successfully');
+                        alert('Your service has been advertised successfully!');
+                        form.reset();
+                    }, 2000);
+                }
+            });
+
+            function validateForm() {
+                let isValid = true;
+
+                // Basic validation for required fields
+                for (let i = 0; i < formFields.length; i++) {
+                    if (formFields[i].hasAttribute('required') && formFields[i].value.trim() === '') {
+                        isValid = false;
+                        showError(formFields[i], 'This field is required');
+                    } else {
+                        clearError(formFields[i]);
+                    }
+                }
+
+                // Specific validations
+                if (formFields.servicePrice.value < 0) {
+                    isValid = false;
+                    showError(formFields.servicePrice, 'Price must be a positive number');
+                }
+
+                // Check if at least one availability option is selected
+                const availabilityChecked = document.querySelectorAll('input[name="availability"]:checked');
+                if (availabilityChecked.length === 0) {
+                    isValid = false;
+                    showError(document.querySelector('input[name="availability"]'), 'Please select at least one availability option');
+                }
+
+                return isValid;
+            }
+
+            function showError(field, message) {
+                clearError(field);
+                const errorDiv = document.createElement('div');
+                errorDiv.className = 'text-red-500 text-sm mt-1';
+                errorDiv.textContent = message;
+                field.parentNode.appendChild(errorDiv);
+                field.classList.add('border-red-500');
+            }
+
+            function clearError(field) {
+                const errorDiv = field.parentNode.querySelector('.text-red-500');
+                if (errorDiv) {
+                    errorDiv.remove();
+                }
+                field.classList.remove('border-red-500');
+            }
+
+            function showLoading() {
+                document.getElementById('loadingOverlay').classList.remove('hidden');
+                document.getElementById('loadingOverlay').classList.add('flex');
+            }
+
+            function hideLoading() {
+                document.getElementById('loadingOverlay').classList.add('hidden');
+                document.getElementById('loadingOverlay').classList.remove('flex');
+            }
+        });
+    </script>
+</body>
+
+</html>
